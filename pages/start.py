@@ -2,8 +2,10 @@ from pages.base import BasePage
 from pages.notepad import Locators
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
 from config.const import BASE_URL
 
+_DEFAULT_TIMEOUT = 15
 
 
 class Locators:
@@ -26,7 +28,8 @@ class StartPage(BasePage):
     URL = f'{BASE_URL}/'
     
     def __init__(self, driver):
-        super().__init__(driver)
+        self.driver = driver
+        self._waiting = WebDriverWait(self.driver, _DEFAULT_TIMEOUT)
 
     def open(self):
         self.driver.get(BASE_URL)
