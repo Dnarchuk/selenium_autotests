@@ -37,7 +37,6 @@ def test_by_alphabet(search_book):
 def test_personal_data(start_page):
     start_page: StartPage
     start_page.scroll_to_end_page_main()
-    time.sleep(2)
     start_page.search_title_personal_data
     start_page.personal_data_button_click()
     page = start_page.search_title_personal_data()
@@ -48,7 +47,6 @@ def test_personal_data(start_page):
 def test_company_page(start_page):
     start_page: StartPage
     start_page.scroll_to_end_page_main()
-    time.sleep(2)
     start_page.search_title_personal_data
     start_page.personal_data_button_click()
     start_page.button_about_company
